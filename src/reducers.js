@@ -1,35 +1,37 @@
 
 const initialState = {
-    display:"ria",
+  display: "",
 }
 
-  export const Modal = (state = initialState, action) => {
-    console.log(action);
-    switch (action.type) {
+export const Modal = (state = initialState, action) => {
+console.log(state);
 
-      case 'NUMBER':
-        let clone1 = JSON.parse(JSON.stringify(state))
-        clone1.display = "";
-        return clone1;
+  switch (action.type) {
+    case 'NUMBER':
+      let clone1 = JSON.parse(JSON.stringify(state))
+      clone1.display += action.Modal;
+      return clone1;
 
-      case 'OPERATOR':
-        let clone2 = JSON.parse(JSON.stringify(state))
-        clone2.display = "";
-        return clone2;
-      case 'EQUALTO':
-        let clone3 = JSON.parse(JSON.stringify(state))
-        clone3.display = "";
-        return clone3;
+    case 'OPERATOR':
 
-      default:
-        return state;
-    }
-  };
+      let clone2 = JSON.parse(JSON.stringify(state))
+      console.log(clone2);
+      clone2.display += action.Modal;
+      return clone2;
 
+    case 'EQUALTO':
 
+      let clone3 = JSON.parse(JSON.stringify(state))
+      clone3.display = action.Modal;
+      return clone3;
+    
+    case 'CLEAR':
 
+      let clone4 = JSON.parse(JSON.stringify(state))
+      clone4.display = "";
+      return clone4;
 
-
-
-
-  
+    default:
+      return state;
+  }
+};

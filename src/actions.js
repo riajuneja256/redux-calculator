@@ -1,14 +1,27 @@
-export const onClickNumber = (Modal) => ({
+export const onClickNumber = (Modal) => {
+  return {
     type: 'NUMBER',
-    Modal,
-  });
+    Modal
+  }
+}
 
-export const onClickOperator = (Modal) => ({
+export const onClickOperator = (Modal) => {
+  return {
     type: 'OPERATOR',
-    Modal,
-  });
+    Modal
+  }
+}
 
-export const onClickEqual = (Modal) => ({
+export const onClickEqual = (Modal) => {
+  return {
     type: 'EQUALTO',
-    Modal,
-  });
+    Modal
+  }
+}
+
+export const onClickAC = (Modal) => {
+  return {
+    type: 'CLEAR',
+    Modal
+  }
+}
